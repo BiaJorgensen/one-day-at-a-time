@@ -50,18 +50,14 @@ const typeDefs = gql`
     }
 
     type Query {
-        # get all users
-        users: [User]
-        # get all tasks
-        tasks: [Task]
-        # get all rewards
-        rewards: [Reward]
         # get user by ID
         user: (id: ID!): User
+        # get task by user ID
+        tasksByUser(userId: ID!): [Task]!
         # get task by ID
-        task(id: ID!): Task
+        taskById(taskId: ID!): Task
         # get reward by ID
-        reward(id: ID!): Reward
+        rewardById(rewardId: ID!): Reward
     }
 
     type Mutation {
